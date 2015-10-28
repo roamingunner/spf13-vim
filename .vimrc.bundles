@@ -131,7 +131,6 @@
             endif
             Bundle 'mhinz/vim-signify'
             Bundle 'tpope/vim-abolish.git'
-            Bundle  'majutsushi/tagbar'
             Bundle 'osyo-manga/vim-over'
             Bundle 'kana/vim-textobj-user'
             Bundle 'kana/vim-textobj-indent'
