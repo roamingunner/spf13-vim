@@ -116,10 +116,12 @@
     " a new buffer is opened; to prevent this behavior, add the following to
     " your .vimrc.before.local file:
     "   let g:spf13_no_autochdir = 1
-    if !exists('g:spf13_no_autochdir')
-        autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
-        " Always switch to the current file directory
-    endif
+    "
+    " !! conflict with cscope disable autochdir
+    "if !exists('g:spf13_no_autochdir')
+        "autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
+        "" Always switch to the current file directory
+    "endif
 
     "set autowrite                       " Automatically write a file when leaving a modified buffer
     set shortmess+=filmnrxoOtT          " Abbrev. of messages (avoids 'hit enter')
@@ -408,6 +410,26 @@
         nmap <silent> <leader>/ :set invhlsearch<CR>
     endif
 
+    "cscope settings
+    if has("cscope")
+      set csprg=/usr/bin/cscope
+      set csto=1
+      set cst
+      set nocsverb
+      " add any database in current directory
+      if filereadable("cscope.out")
+          cs add cscope.out
+      endif
+      set csverb
+      nmap <c-\>s :cs find s <c-r>=expand("<cword>")<cr><cr>
+      nmap <c-\>g :cs find g <c-r>=expand("<cword>")<cr><cr>
+      nmap <c-\>c :cs find c <c-r>=expand("<cword>")<cr><cr>
+      nmap <c-\>t :cs find t <c-r>=expand("<cword>")<cr><cr>
+      nmap <c-\>e :cs find e <c-r>=expand("<cword>")<cr><cr>
+      nmap <c-\>f :cs find f <c-r>=expand("<cfile>")<cr><cr>
+      nmap <c-\>i :cs find i ^<c-r>=expand("<cfile>")<cr>$<cr>
+      nmap <c-\>d :cs find d <c-r>=expand("<cword>")<cr><cr>
+    endif
 
     " Find merge conflict markers
     map <leader>fc /\v^[<\|=>]{7}( .*\|$)<CR>
