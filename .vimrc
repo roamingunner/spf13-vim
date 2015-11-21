@@ -1057,6 +1057,8 @@
             let g:airline_powerline_fonts = 1
             nmap <Tab> :bn<CR>
             nmap <S-Tab> :bp<CR>
+            " disable show line number.
+            let g:airline_section_z = ''
         endif
     " }
 
