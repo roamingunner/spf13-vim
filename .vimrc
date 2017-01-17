@@ -640,6 +640,8 @@
     " ctrlp {
         if isdirectory(expand("~/.vim/bundle/ctrlp.vim/"))
             let g:ctrlp_working_path_mode = 'ra'
+            let g:ctrlp_max_files=0
+            let g:ctrlp_max_height=25
             nnoremap <Leader>b :CtrlPBuffer<CR>
             nnoremap <Leader>m :CtrlPMRU<CR>
             let g:ctrlp_custom_ignore = {
