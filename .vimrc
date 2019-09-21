@@ -714,8 +714,8 @@
 
             " remap Ultisnips for compatibility for YCM
             let g:UltiSnipsExpandTrigger = '<C-j>'
-            let g:UltiSnipsJumpForwardTrigger = '<C-j>'
-            let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
+            let g:UltiSnipsJumpForwardTrigger = '<C-n>'
+            let g:UltiSnipsJumpBackwardTrigger = '<C-p>'
 
             " Enable omni completion.
             autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
