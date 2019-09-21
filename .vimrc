@@ -733,15 +733,18 @@
 
     " YouCompleteMe {
         if count(g:spf13_bundle_groups, 'youcompleteme')
+            let g:ycm_complete_in_comments = 1
             let g:acp_enableAtStartup = 0
 
             " enable completion from tags
             let g:ycm_collect_identifiers_from_tags_files = 1
-
             " remap Ultisnips for compatibility for YCM
+            let g:ycm_key_invoke_completion = '<C-l>'
             let g:UltiSnipsExpandTrigger = '<C-j>'
-            let g:UltiSnipsJumpForwardTrigger = '<C-n>'
-            let g:UltiSnipsJumpBackwardTrigger = '<C-p>'
+            let g:ycm_key_list_previous_completion = ['<C-i>']
+            let g:ycm_key_list_select_completion = ['<C-k>']
+            " let g:UltiSnipsJumpForwardTrigger = '<C-n>'
+            " let g:UltiSnipsJumpBackwardTrigger = '<C-p>'
 
             " Enable omni completion.
             autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS

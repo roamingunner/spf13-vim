@@ -21,6 +21,18 @@ Great care has been taken to ensure that each plugin plays nicely with others, a
 
 Lastly (and perhaps, most importantly) It is completely cross platform. It works well on Windows, Linux and OSX without any modifications or additional configurations. If you are using [MacVim] or Gvim additional features are enabled. So regardless of your environment just clone and run.
 
+# amend by roamingunner
+
+first:
+
+```bash
+wget https://raw.githubusercontent.com/roamingunner/spf13-vim/3.0/spf13-vim.sh && sh spf13-vim.sh
+```
+
+second:
+
+before compiling youcompleteme ,run setup.sh in this project
+
 # Installation
 ## Requirements
 To make all the plugins work, specifically [neocomplete](https://github.com/Shougo/neocomplete.vim), you need [vim with lua](https://github.com/Shougo/neocomplete.vim#requirements).
