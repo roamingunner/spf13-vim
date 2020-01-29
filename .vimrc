@@ -740,11 +740,12 @@
             let g:ycm_collect_identifiers_from_tags_files = 1
             " remap Ultisnips for compatibility for YCM
             let g:ycm_key_invoke_completion = '<C-l>'
+            let g:ycm_key_list_previous_completion = ['<C-n>']
+            let g:ycm_key_list_select_completion = ['<C-p>']
+
             let g:UltiSnipsExpandTrigger = '<C-j>'
-            let g:ycm_key_list_previous_completion = ['<C-i>']
-            let g:ycm_key_list_select_completion = ['<C-k>']
-            " let g:UltiSnipsJumpForwardTrigger = '<C-n>'
-            " let g:UltiSnipsJumpBackwardTrigger = '<C-p>'
+            let g:UltiSnipsJumpForwardTrigger = '<C-j>'
+            let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
 
             " Enable omni completion.
             autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
